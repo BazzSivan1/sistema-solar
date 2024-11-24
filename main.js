@@ -2,6 +2,8 @@ import * as Three from 'three'
 import './style.css'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js'
+import gsap from 'gsap'
 
 const width = window.innerWidth
 const height = window.innerHeight
@@ -182,6 +184,14 @@ modelLoader.load( "models/freak_fortress_2_monoculus_rig/scene.gltf",
     earth.castShadow = true
     earth.receiveShadow = true
     earthPosition.add( earth )
+
+    gsap.to(earth.position, {
+      y: 1,
+      duration: 1,
+      yoyo: true,
+      repeat: -1,
+      ease: "power1.inOut"
+    })
   }
 )
 
@@ -265,6 +275,59 @@ pla.rotation.set( 90 * Math.PI / 4, 0, 0 )
 pla.receiveShadow = true
 scene.add( pla )
 
+window.addEventListener('resize', () => {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+});
+
+const hdrLoader = new RGBELoader();
+hdrLoader.load('hdris/HDR_blue_nebulae-1.hdr', (texture) => {
+  texture.mapping = Three.EquirectangularReflectionMapping
+  scene.background = texture
+  scene.environment = texture
+})
+
+// spase ship
+let ship = null
+modelLoader.load("models/3d_t.i.e_fighter_-_star_wars_model/scene.gltf",
+  (gltf) => {
+    ship = gltf.scene
+    ship.scale.set(0.5, 0.5, 0.5)
+    ship.position.set(16, 5, 0)
+    ship.castShadow = true
+    ship.receiveShadow = true
+    scene.add(ship)
+
+    gsap.to(ship.position, {
+      x: -25,
+      duration: 5,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut"
+    })
+  }
+)
+
+// Animación de la cámara
+gsap.to(camera.position, {
+  x: 30,
+  y: 40,
+  z: 50,
+  duration: 10,
+  repeat: -1,
+  yoyo: true,
+  ease: "power1.inOut",
+  onUpdate: () => {
+    camera.lookAt(system.position)
+  }
+})
+
 let time = Date.now()
 
 function animate() {
@@ -286,18 +349,18 @@ function animate() {
   //   camera.lookAt( model.position )
   // }
 
-  sun.rotateY( 0.0001 * daltaTime )
+  if (sun) sun.rotateY(0.0001 * daltaTime)
   mercuryRotation.rotateY( 0.0002 * daltaTime )
-  mercury.rotateY( 0.0003 * daltaTime )
+  if (mercury) mercury.rotateY(0.0003 * daltaTime)
   venusRotation.rotateY( 0.0003 * daltaTime )
-  venus.rotateY( 0.0004 * daltaTime )
+  if (venus) venus.rotateY(0.0004 * daltaTime)
   earthRotation.rotateY( 0.0005 * daltaTime )
-  earth.rotateY( 0.0006 * daltaTime )
+  if (earth) earth.rotateY(0.0006 * daltaTime)
   moonRotation.rotateY( 0.00005 * daltaTime )
-  moon.rotateY( 0.0001 * daltaTime )
-  moon1.rotateY( 0.0001 * daltaTime )
+  if (moon) moon.rotateY(0.0001 * daltaTime)
+  if (moon1) moon1.rotateY(0.0001 * daltaTime)
   marsRotation.rotateY( 0.0004 * daltaTime )
-  mars.rotateY( 0.0005 * daltaTime )
+  if (mars) mars.rotateY(0.0005 * daltaTime)
 
   camera.lookAt( system.position )
 
