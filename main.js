@@ -305,7 +305,7 @@ modelLoader.load("models/3d_t.i.e_fighter_-_star_wars_model/scene.gltf",
     scene.add(ship)
 
     gsap.to(ship.position, {
-      x: -25,
+      x: -15,
       duration: 5,
       repeat: -1,
       yoyo: true,
