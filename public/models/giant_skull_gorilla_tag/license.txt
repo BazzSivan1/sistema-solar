@@ -1,0 +1,11 @@
+Model Information:
+* title:	Giant Skull Gorilla Tag
+* source:	https://sketchfab.com/3d-models/giant-skull-gorilla-tag-63b4bc5b17e743928d02a0cc59f230fa
+* author:	KPMisParrot (https://sketchfab.com/KPMisParrot)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Giant Skull Gorilla Tag" (https://sketchfab.com/3d-models/giant-skull-gorilla-tag-63b4bc5b17e743928d02a0cc59f230fa) by KPMisParrot (https://sketchfab.com/KPMisParrot) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
