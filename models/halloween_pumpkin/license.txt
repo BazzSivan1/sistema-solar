@@ -1,0 +1,11 @@
+Model Information:
+* title:	Halloween Pumpkin
+* source:	https://sketchfab.com/3d-models/halloween-pumpkin-718202d7f4544d4ca43d577f1f299195
+* author:	Tink (https://sketchfab.com/tinkov)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Halloween Pumpkin" (https://sketchfab.com/3d-models/halloween-pumpkin-718202d7f4544d4ca43d577f1f299195) by Tink (https://sketchfab.com/tinkov) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
