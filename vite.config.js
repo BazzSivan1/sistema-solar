@@ -1,3 +1,3 @@
 export default {
-    base: "/MaterialsTexturesShadows/"
+    base: "/SISTEMA-SOLAR/"
 }
