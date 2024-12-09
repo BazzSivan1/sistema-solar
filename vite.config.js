@@ -1,3 +1,3 @@
 export default {
-    base: "/FanalVR/"
+    base: "/sistrma-solar/"
 }
